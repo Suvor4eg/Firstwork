@@ -2,6 +2,7 @@ var path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
 var appp = express();
+//appp.set('views', './resources/views'); //отключить во время разработки
 
 appp.use( bodyParser.urlencoded( { extended: true} ) );
 appp.use ( bodyParser.json() );
@@ -11,12 +12,15 @@ appp.get( "/", function (req, res ) {
 } );
 
 appp.get( "/style.css", function (req, res ) {
+    //res.sendFile('style.css', { root: path.join(__dirname, '../views') });  //отключить во время разработки
     res.sendFile(__dirname + '/views/style.css');
 } );
 
 appp.get( "/script.js", function (req, res ) {
+    //res.sendFile('script.js', { root: path.join(__dirname, '../views') });  //отключить во время разработки
     res.sendFile(__dirname + '/views/script.js');
 } );
+
 
 appp.post('/', function (req, res) {
     let gname = req.body.gname;
@@ -33,10 +37,15 @@ appp.post('/', function (req, res) {
        //console.log({gname, gyear, gnumber, goperation, gdoperation, gexecutor, date});
 
         pool.query('INSERT INTO statistikwork SET name = ?, year = ?, number = ?, operation = ?, information = ?, executor = ?, date = ?, status = ?, finalinformation = ?, finalexecutor = ?, conclusion = ?', [gname, gyear, gnumber, goperation, gdoperation, gexecutor, date, ``, ``, ``, ``], function (err, results){
-            //console.log(err);
+            if(err) {
+                app.quit();
+            }
+            else {
+                res.redirect('/');
+            }
         });
 
-        res.redirect("/");
+        
     }
     else {
         gname = ``;
@@ -46,8 +55,9 @@ appp.post('/', function (req, res) {
         gdoperation = ``;
         gexecutor = ``;
         date = ``;
+
         console.log(`There is not enough data to send to the database`); // не все обязательные поля заполнены.
-        res.render('index.ejs');
+        res.redirect('/');
     }
 })
 
@@ -75,7 +85,7 @@ ejse.data('username', 'Some Guy');
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
         width: 1552,
-        height: 950
+        height: 950,
     })
     mainWindow.loadURL('http://localhost:3000/')
     mysqlconnect();
@@ -83,7 +93,7 @@ app.on('ready', () => {
 });
 
 app.on('window-all-closed', function () {
-    if (process.platform !== 'darwin') app.quit()
+    if (process.platform !== 'darwin') app.quit();
   })
 
 function mysqlconnect() {
@@ -99,4 +109,3 @@ function mysqlconnect() {
        
     });
 }
-console.log(path.dirname(`views`));
