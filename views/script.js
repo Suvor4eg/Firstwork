@@ -51,9 +51,9 @@ document.getElementById("date").value = TimeReal;
 function trysave() {
   if(document.getElementById("naumenovanie").value && document.getElementById("numbermodyla").value && document.getElementById('worker') && document.getElementById('operatia'))
   {
-    alert(`Данные успешно записаны в БД!`);
+    //alert(`Данные успешно записаны в БД!`);
   }
   else {
-    alert(`Заполните основные поля!`);
+    //alert(`Заполните основные поля!`);
   }
 };
