@@ -5,71 +5,87 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css" type="text/css">
-        <title>Vacuun Work</title>
+        <title>Vacuum Work</title>
     </head>
     <body>
-        <form action="/" method="post">
-            <div class="main-main">
-                <div class="global-main">
-                    <a class="name-name">МОНТАЖНЫЕ РАБОТЫ</a>
-                </div>
-                <div class="globalname">
-                    <a class="name-name">НАИМЕНОВАНИЕ ИЗДЕЛИЯ</a><br>
-                    <input class="pole-name" id="naumenovanie" type="text" list="name" value="" name="gname"></input>
-                    <datalist id="name"></datalist>
-                </div>
-                <div class="globalyear">
-                    <a class="name-name">ГОД МОДУЛЯ</a><br>
-                    <input class="pole-y" id="godmodyla" type="number" step="1" name="gyear"></input>
-                </div>
-                <div class="globalnumber">
-                    <a class="name-name">НОМЕР</a><br>
-                    <input class="pole-number" id="numbermodyla" type="text" name="gnumber"></input>
-                </div>
-                <div class="globaloperation">
-                    <a class="name-name">ОПЕРАЦИЯ</a><br>
-                    <input class="pole-o" id="operatia" type="text" list="operation" name="goperation"></input>
-                    <datalist id="operation"></datalist>
-                </div>
-                <div class="globalsupport">
-                    <a class="name-name">ДОП. ОПИСАНИЕ</a><br>
-                    <input class="pole-dop" type="text" id="dopoperatia" id="ptest" name="gdoperation"></input>
-                </div>
-                <div class="globalconfirmname">
-                    <a class="name-name">ИСПОЛНИТЕЛЬ</a><br>
-                    <input class="pole-v" type="text" list="worker" id="icpolnitel" name="gexecutor"></input>
-                    <datalist id="worker"></datalist>
-                </div>
-                <div class="globaldate">
-                    <a class="name-name">ДАТА</a><br>
-                    <input class="pole-date" type="text" name="date" id="date" READONLY ></input>
-                </div>
-                <div class="globalsubmit">
-                    <a></a><br>
-                    <input class="pole-s" type="submit" value="ПОДТВЕРДИТЬ" onclick="trysave()"></input>
+        <div class="main-G">
+            <div class="main_body">
+                <form action="/savebd" method="post">
+                    <div class="main-main">
+                        <div class="global-main">
+                            <a class="name-name">МОНТАЖНЫЕ РАБОТЫ И ГЕРМЕТИЗАЦИЯ</a>
+                        </div>
+                        <div class="globalname">
+                            <a class="name-name">НАИМЕНОВАНИЕ ИЗДЕЛИЯ</a><br>
+                            <input class="pole-name" id="naumenovanie" type="text" list="name" value="" name="gname"></input>
+                            <datalist id="name"></datalist>
+                        </div>
+                        <div class="globalyear">
+                            <a class="name-name">ГОД МОДУЛЯ</a><br>
+                            <input class="pole-y" id="godmodyla" type="number" step="1" name="gyear"></input>
+                        </div>
+                        <div class="globalnumber">
+                            <a class="name-name">НОМЕР</a><br>
+                            <input class="pole-number" id="numbermodyla" type="text" name="gnumber"></input>
+                        </div>
+                        <div class="globaloperation">
+                            <a class="name-name">ОПЕРАЦИЯ</a><br>
+                            <input class="pole-o" id="operatia" type="text" list="operation" name="goperation"></input>
+                            <datalist id="operation"></datalist>
+                        </div>
+                        <div class="globalsupport">
+                            <a class="name-name">ДОП. ОПИСАНИЕ</a><br>
+                            <input class="pole-dop" type="text" id="dopoperatia" id="ptest" list="dopoperation" name="gdoperation"></input>
+                            <datalist id="dopoperation"></datalist>
+                        </div>
+                        <div class="globalconfirmname">
+                            <a class="name-name">ИСПОЛНИТЕЛЬ</a><br>
+                            <input class="pole-v" type="text" list="worker" id="icpolnitel" name="gexecutor"></input>
+                            <datalist id="worker"></datalist>
+                        </div>
+                        <div class="globaldate">
+                            <a class="name-name">ДАТА</a><br>
+                            <input class="pole-date" type="text" name="date" id="date" READONLY ></input>
+                        </div>
+                        <div class="globalsubmit">
+                            <a></a><br>
+                            <input class="pole-s" type="submit" value="ПОДТВЕРДИТЬ"></input>
+                        </div>
+                    </div>
+                    <input type="hidden" id="realtime" name="realtime">
+                </form>
+                <form action="/requestbd" method="post">
+                    <div class="information">
+                        <div class="global-main">
+                            <a class="name-name">БАЗА ДАННЫХ</a>
+                        </div>
+                        <div class="globalname">
+                            <a class="name-name">НАИМЕНОВАНИЕ ИЗДЕЛИЯ</a><br>
+                            <input class="pole-name" id="naumenovanie" type="text" list="name" name="namesearth"></input>
+                            <datalist id="name"></datalist>
+                        </div>
+                        <div class="globalnumber">
+                            <a class="name-name">НОМЕР</a><br>
+                            <input class="pole-number" id="numbermodyla" type="text" name="numbersearth"></input>
+                        </div>
+                        <div class="globalsubmit">
+                            <a></a><br>
+                            <input class="pole-s" type="submit" value="ПОИСК" name="searthindb"></input>
+                        </div>
+                    </div>
+                    <input type="hidden" id="SQLstatus" value="<%= SQLstatus %>">
+                    <input type="hidden" id="allblocks" value="<%= allblocks %>">
+                </form>
+                <div id="popup" class="popup">
+                    <div class="popup_body">
+                        <div class="popup_content">
+                            <div class="popup_text" id="popup_text"></div>
+                            <input type="submit" class="popup_close" value="OK" onclick="okdone()"></input>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="information">
-                <div class="global-main">
-                    <a class="name-name">БАЗА ДАННЫХ</a>
-                </div>
-                <div class="globalname">
-                    <a class="name-name">НАИМЕНОВАНИЕ ИЗДЕЛИЯ</a><br>
-                    <input class="pole-name" id="naumenovanie" type="text" list="name" value="" name=""></input>
-                    <datalist id="name"></datalist>
-                </div>
-                <div class="globalnumber">
-                    <a class="name-name">НОМЕР</a><br>
-                    <input class="pole-number" id="numbermodyla" type="text" name=""></input>
-                </div>
-                <div class="globalsubmit">
-                    <a></a><br>
-                    <input class="pole-s" type="submit" value="ПОИСК" onclick="" disabled ></input>
-                </div>
-            </div>
-
-        </form>
+        </div> 
         <script src="script.js">
             require('./renderer.js');
         </script>

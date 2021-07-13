@@ -1,11 +1,29 @@
+.main-G {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    top: 0;
+    left: 0;
+}
+
+.main_body {
+    min-height: 100%;
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 0.5px solid rgba(0, 0, 0, 0);
+    position: relative;
+}
 
 .global-main{
     text-align: center;
     font-weight: bold;
 }
 .main-main {
-    height:860px;
-    width: 750px;
+    height:800px;
+    width: 600px;
     background-color: rgba(248, 247, 243);
     padding-top: 15px;
     margin: 0 auto;
@@ -18,8 +36,8 @@
 }
 
 .information {
-    height:860px;
-    width: 750px;
+    height:800px;
+    width: 600px;
     background-color: rgba(248, 247, 243);
     padding-top: 15px;
     display: inline-block;
@@ -69,12 +87,12 @@
 
 .name-name {
     color: rgb(49, 49, 49);
-    font-size: 30px;
+    font-size: 25px;
+    font-family:Arial, Helvetica, sans-serif
 }
 
 .pole-y {
-    height:40px;
-    width: 130px;
+    width: 25%;
     text-align: center;
     font-size: 30px;
     border-radius: 5px;
@@ -82,8 +100,7 @@
 }
 
 .pole-name {
-    height:40px;
-    width: 700px;
+    width: 85%;
     text-align: center;
     font-size: 30px;
     border-radius: 5px;
@@ -91,8 +108,7 @@
 }
 
 .pole-number {
-    height:40px;
-    width: 310px;
+    width: 45%;
     text-align: center;
     font-size: 30px;
     border-radius: 5px;
@@ -100,8 +116,7 @@
 }
 
 .pole-o {
-    height:40px;
-    width: 310px;
+    width: 85%;
     text-align: center;
     font-size: 30px;
     border-radius: 5px;
@@ -109,8 +124,7 @@
 }
 
 .pole-dop {
-    height:40px;
-    width: 700px;
+    width: 85%;
     text-align: center;
     font-size: 30px;
     border-radius: 5px;
@@ -118,8 +132,7 @@
 }
 
 .pole-v {
-    height:40px;
-    width: 310px;
+    width: 45%;
     text-align: center;
     font-size: 30px;
     border-radius: 5px;
@@ -127,8 +140,7 @@
 }
 
 .pole-date {
-    height:40px;
-    width: 310px;
+    width: 30%;
     text-align: center;
     font-size: 30px;
     border-radius: 5px;
@@ -137,6 +149,7 @@
 }
 
 .pole-s {
+    cursor: pointer;
     height:100px;
     width: 350px;
     text-align: center;
@@ -174,4 +187,133 @@
     font-size: 20px;
     border-radius: 5px;
     border: 0.5px solid rgba(46, 46, 45, 0.986);
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.popup_body {
+    min-height: 100%;
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px 30px 0px;
+    border-radius: 5px;
+    border: 0.5px solid rgba(0, 0, 0);
+}
+
+.popup_content {
+    background-color: rgb(248, 247, 243);
+    color: black;
+    max-width: 800px;
+    padding: 15px;
+    font-size: 30px;
+    border-radius: 5px;
+    border: 0.5px solid rgba(0, 0, 0);
+    text-align: center;
+}
+
+.popup_close {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 0.5px solid rgba(46, 46, 45, 0.986);
+    color:rgba(46, 46, 45, 0.986);
+    background-color: rgb(248, 247, 243);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.popup_close:hover{
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 0.5px solid rgba(46, 46, 45, 0.986);
+    background-color: rgb(22, 95, 27);
+    color: rgb(248, 247, 243);
+}
+
+.main_bodytwo {
+    min-height: 100%;
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 0.5px solid rgba(0, 0, 0, 0);
+    position: relative;
+}
+.main-maintwo {
+    background-color: rgba(248, 247, 243);
+    padding-top: 15px;
+    margin: 0 auto;
+    float: left;
+    height:800px;
+    width: 1200px;
+    border-radius: 5px;
+    border: 0.5px solid rgba(46, 46, 45, 0.986);
+    text-align: center;
+}
+
+.divcroll{
+    align-items: center;
+    margin: 0 auto;
+    height: 600px;
+    width: 1100px;
+    padding-right: 1px;
+    overflow:auto;
+    font-size: 20px;
+    border: 0.5px solid rgba(46, 46, 45, 0.986);
+}
+
+.tablefirst{
+    width: 100%;
+    border: 0.5px solid rgba(46, 46, 45, 0.986);
+    margin: 0 auto;
+    font-family:'Courier New', Courier, monospace
+}
+.trfirst{
+    height: 40px;
+}
+
+.tb0 {
+    border: 0.5px solid rgba(46, 46, 45, 0.986);
+    background-color: rgb(194, 119, 34);
+}
+
+.tb1 {
+    border: 0.5px solid rgba(46, 46, 45, 0.986);
+    background-color: rgb(248, 247, 243);
+}
+
+.divknopka{
+    padding-top: 15px;
+}
+
+.knopkaback{
+    padding: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    border: 0.5px solid rgba(46, 46, 45, 0.986);
+    color:rgba(46, 46, 45, 0.986);
+    background-color: rgb(248, 247, 243);
+}
+
+.knopkaback:hover{
+    text-decoration: none;
+    font-size: 20px;
+    border: 0.5px solid rgba(46, 46, 45, 0.986);
+    background-color: rgb(95, 22, 22);
+    color: rgb(248, 247, 243);
 }

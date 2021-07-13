@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <title>Vacuum Work</title>
+    </head>
+    <body>
+        <div class="main-G">
+            <div class="main_body">
+                <div class="main_bodytwo">
+                    <form action="/back" method="post">
+                        <div class="main-maintwo">
+                            <div class="divcroll">
+                                <table class="tablefirst">
+                                    <tr class="trfirst">
+                                        <th class="tb0">ID</th>
+                                        <th class="tb0">ГОД</th>
+                                        <th class="tb0">НАИМЕНОВАНИЕ</th>
+                                        <th class="tb0">НОМЕР</th>
+                                        <th class="tb0">ОПЕРАЦИЯ</th>
+                                        <th class="tb0">ДОП. ОПИСАНИЕ</th>
+                                        <th class="tb0">ИСПОЛНИТЕЛЬ</th>
+                                        <th class="tb0">ДАТА</th>
+                                        <th class="tb0">ВРЕМЯ</th>
+                                    </tr>
+                                    <div class="content"></div>
+                                </table>
+                                <table class="taff"></table>
+                            </div>
+                            <div class="divknopka">
+                                <input type="submit" class="knopkaback" value="НАЗАД"></input> 
+                            </div>
+                            
+                        </div>
+                        <input type="hidden" class="tableobject" id="tableobject" value="<%= tableobject %>">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="scripttwo.js">
+            require('./renderer.js');
+        </script>
+    </body>
+    </html>
